@@ -16,4 +16,4 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # Запустите Gunicorn для Django
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]

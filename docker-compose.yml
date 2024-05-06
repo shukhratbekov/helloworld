@@ -9,8 +9,6 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - /etc/letsencrypt:/etc/letsencrypt
-      - ./certbot-renew.sh:/etc/cron.daily/certbot-renew.sh
-    entrypoint: /bin/sh -c "nginx -g 'daemon off;' & /etc/cron.daily/certbot-renew.sh && tail -f /dev/null"
     depends_on:
       - django
       - fastapi
